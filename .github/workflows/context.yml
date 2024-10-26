@@ -6,11 +6,10 @@ jobs:
   my-context:
     runs-on: ubuntu-latest
     steps:
-      - name: Set environment variable
-        run: echo "MY_ACTION=${{ github.action }}" >> $GITHUB_ENV
-        
-      - name: "my step"
-        run: echo "Hello! $MY_ACTION"
+      - name: "My Step"
+        run: |
+           echo "Action! $MY_ACTION"
+           echo "ACTOR! $MY_ACTOR"
         env:
             MY_ACTION: ${{github.action}}
             MY_ACTOR: ${{github.actor}}
